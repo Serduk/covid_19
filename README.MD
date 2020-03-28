@@ -1,0 +1,1 @@
+[API](https://rapidapi.com/Gramzivi/api/covid-19-data?endpoint=apiendpoint_e589ebc5-aa99-478a-9f81-c86f2c9d278f)

@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Covid_19</string>
+    <string name="insert_country">Insert country</string>
+    <string name="btn_search">Search</string>
+    <string name="recovered">Recovered</string>
+    <string name="confirmed">Confirmed</string>
+    <string name="deaths">Deaths</string>
+    <string name="latitude">Latitude</string>
+    <string name="longitude">Longitude</string>
+    <string name="type_valid_country">Insert valid country</string>
 </resources>
