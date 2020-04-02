@@ -15,7 +15,7 @@ import com.sserdiuk.covid_19.utils.Country
 import com.sserdiuk.covid_19.utils.RepoUt
 import com.sserdiuk.covid_19.utils.network.NetworkUtil
 
-class CountryActivity : BaseActivity(), CountryCallbacks, CountryRouter {
+class CountryActivity : BaseActivity(), CountryCallbacks, CountryRouter, CountryAdapter.ListItemClickListener {
 
     private val presenter = CountryPresenter(RepoUt(NetworkUtil(Constants.API_URL)))
 
@@ -88,6 +88,10 @@ class CountryActivity : BaseActivity(), CountryCallbacks, CountryRouter {
         }
     }
 
+    override fun showTopCountries(items: List<ResultItem>) {
+        TODO("Not yet implemented")
+    }
+
     override fun onDestroy() {
         super.onDestroy()
         presenter.run {
@@ -113,5 +117,9 @@ class CountryActivity : BaseActivity(), CountryCallbacks, CountryRouter {
             latitude.visibility = GONE
             longitude.visibility = GONE
         }
+    }
+
+    override fun onItemClick(position: Int) {
+        TODO("Not yet implemented")
     }
 }

@@ -9,4 +9,5 @@ interface CountryCallbacks : ViewCallback {
     fun showError(message: String)
     fun setBackground(path: String)
     fun showPB(show: Boolean)
+    fun showTopCountries(items: List<ResultItem>)
 }

@@ -24,6 +24,10 @@ class CountryPresenter(private val repo: RepoUt) : Presenter<CountryCallbacks, C
         repo.fetchItem(country ?: "")
     }
 
+    fun onCountryClicked(position: Int) {
+
+    }
+
     @SuppressLint("TimberArgCount")
     override fun onSuccessRequest(item: ResultItem) {
         Timber.d("item is: %s $item")
