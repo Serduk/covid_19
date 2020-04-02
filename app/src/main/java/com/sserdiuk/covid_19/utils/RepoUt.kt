@@ -15,7 +15,7 @@ import timber.log.Timber
 class RepoUt(networkUtil: NetworkUtil) {
     private val api = networkUtil.retrofit.create(ApiController::class.java)
     var onRequest: OnRequest<MainItem>? = null
-    var onCountryRequest: OnRequest<ResultItem>? = null
+    var onCountryRequest: OnRequest<List<ResultItem>>? = null
 
     fun fetchTotal() {
         Timber.d("Request for all data")

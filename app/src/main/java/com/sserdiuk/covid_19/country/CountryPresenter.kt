@@ -29,11 +29,11 @@ class CountryPresenter(private val repo: RepoUt) : Presenter<CountryCallbacks, C
     }
 
     @SuppressLint("TimberArgCount")
-    override fun onSuccessRequest(item: ResultItem) {
+    override fun onSuccessRequest(item: List<ResultItem>) {
         Timber.d("item is: %s $item")
         view?.run {
             showPB(false)
-            showData(item)
+            showData(item[0])
         }
     }
 
