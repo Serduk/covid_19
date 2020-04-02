@@ -38,17 +38,30 @@ class RepoUt(networkUtil: NetworkUtil) {
     fun fetchItem(name: String) {
         val items: List<ResultItem> = ArrayList()
         val countries = arrayListOf("Canada", "Germany", "Italy", "France", "China", "Austria", "Australia", "Portugal", "Japan")
-        val call: Call<Result> = api.getByCountryName(name)
+        var call: Call<Result> = api.getByCountryName(name)
         call.enqueue(object : Callback<Result> {
             override fun onResponse(call: Call<Result>, response: Response<Result>) {
-                onCountryRequest?.onSuccessRequest(response.body()!![0])
+//                onCountryRequest?.onSuccessRequest(response.body()!![0])
             }
 
             override fun onFailure(call: Call<Result>, t: Throwable) {
                 onCountryRequest?.onFailureRequest(t.localizedMessage ?: "")
             }
         })
-        countries.forEach()
+        for (item in countries) {
+            call = api.getByCountryName(item)
+            call.enqueue(object : Callback<Result> {
+                override fun onResponse(call: Call<Result>, response: Response<Result>) {
+                    item.plus(response.body()!![0])
+                }
+
+                override fun onFailure(call: Call<Result>, t: Throwable) {
+
+                }
+            })
+
+            onCountryRequest?.onSuccessRequest(items)
+        }
     }
 }
 
